@@ -9,13 +9,15 @@ Game Agnostic Console Commands (GACC) is a BepInEx 5.4 plugin for dynamically lo
 ## To Install
 
 Just merge the enclosed BepInEx folder with your game's BepInEx 5 folder! (YourGameFolder/BepInEx)
+
 Custom Commands go in (YourGameFolder/BepInEx/config/CommandScripts)
 
 ## How to Create a Custom Command (Windows)
 
 Open Visual Studio and create a new project.
-you want this project to be a C# Class Library, and it should target netstandard 2.1
-If you cannot find this project template, you likely need to install some .net dev packages in the visual studio installer gui
+You want this project to be a C# Class Library, and it should target netstandard 2.1
+
+If you cannot find this project template, you likely need to install some .net dev packages in the visual studio installer GUI
 
 1. Create a New Class for Your Command and write your code
 

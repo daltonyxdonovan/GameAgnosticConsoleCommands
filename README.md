@@ -57,29 +57,35 @@ public class CommandExample : ICommand
 2. Build the Command DLL
 
 After writing the command code, compile it into a DLL.
+
     Add references to any necessary libraries by right clicking 'Dependencies' in the solution explorer, then 'Add Project Reference', then 'Browse' for your dll to reference. For example:
-        BepInEx.dll (for logging, you can find this in your bepinex/core folder of your game).
-        ICommand.dll (to inherit from).
+    
+        - BepInEx.dll (for logging, you can find this in your bepinex/core folder of your game).
+        - ICommand.dll (to inherit from).
+        
     Build the project by running 'dotnet build' in a terminal that is based in your command folder, and you'll get a .dll file. congrats! this is your custom command
 
 3. Place the DLL in the CommandScripts Folder
 
-    Navigate to the folder where your plugin needs installed (YourGameFolder/BepInEx/config/CommandScripts).
-    Drop the compiled .dll into this directory.
+        Navigate to the folder where your plugin needs installed (YourGameFolder/BepInEx/config/CommandScripts).
+   
+        Drop the compiled .dll into this directory.
 
-4. Load the Command in Your Plugin
+5. Load the Command in Your Plugin
 
-Once the DLL is placed in the appropriate directory, the plugin will automatically detect it and attempt to load the commands at runtime. Just start the game and read the bepinex log to see if it worked! (it's near the top, and you can just as easily try to run the command to test it instead!)
+        Once the DLL is placed in the appropriate directory, the plugin will automatically detect it and attempt to load the commands at runtime.
+
+       Just start the game and read the bepinex log to see if it worked! (it's near the top, and you can just as easily try to run the command to test it instead!)
 
 5. Using Your Command
 
-After loading the command DLL, you can use your custom command via the console interface. For example:
+    After loading the command DLL, you can use your custom command via the console interface. For example:
 
-    Open the console _in game_ (by pressing the key: /).
-          - note that this is why I traditionally start all commands with /, as that will be entered when you open the command input
-    Type ExampleCommand (or whatever you named your command).
-    Press Enter to execute the command.
-    The system will call the Execute() method of the CommandExample class, which will log the message: "Example command executed!".
+       - Open the console _in game_ (by pressing the key: /).
+          -- note that this is why I traditionally start all commands with /, as that will be entered when you open the command input
+       - Type ExampleCommand (or whatever you named your command).
+       - Press Enter to execute the command.
+       - The system will call the Execute() method of the CommandExample class, which will log the message: "Example command executed!".
 
 ## Logger Injection
 

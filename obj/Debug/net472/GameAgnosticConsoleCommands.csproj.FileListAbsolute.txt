@@ -113,3 +113,4 @@ C:\Users\dalto\OneDrive\Desktop\HavendockCommands\GameAgnosticConsoleCommands\ob
 C:\Users\dalto\OneDrive\Desktop\HavendockCommands\GameAgnosticConsoleCommands\obj\Debug\net472\GameAgno.35102B4E.Up2Date
 C:\Users\dalto\OneDrive\Desktop\HavendockCommands\GameAgnosticConsoleCommands\obj\Debug\net472\GACC.dll
 C:\Users\dalto\OneDrive\Desktop\HavendockCommands\GameAgnosticConsoleCommands\obj\Debug\net472\GACC.pdb
+C:\Users\dalto\OneDrive\Desktop\HavendockCommands\GameAgnosticConsoleCommands\obj\Debug\net472\GameAgnosticConsoleCommands.sourcelink.json

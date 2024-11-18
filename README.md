@@ -1,7 +1,10 @@
 # Game Agnostic Console Commands (GACC): Custom Command Creation
 ## Overview
 
-The Game Agnostic Console Commands (GACC) is a plugin for dynamically loading and executing custom commands in their games, without having to hardcode them. This system allows for extensibility, enabling savvy folks to add their own custom functionality without needing to modify the core plugin code.
+The Game Agnostic Console Commands (GACC) is a BepInEx 5.4 plugin for dynamically loading and executing custom commands in their games, without having to hardcode them. This system allows for extensibility, enabling savvy folks to add their own custom functionality without needing to modify the core plugin code. It has only 2 requirements to run properly in a Unity Game that has BepInEx 5.4 installed:
+
+- The game must use TextMeshProUGUI as it's text handler (as we use it to display _our_ text)
+- The game must use a Canvas object as it's UI handler (and it must be one that displays, as we just pick the one we can find!)
 
 ## To Install
 

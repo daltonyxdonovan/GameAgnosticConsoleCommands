@@ -30,28 +30,48 @@ Each custom command needs to implement the ICommand interface. This interface re
 ### Example Command Class:
 
 ```
-using System;
 using BepInEx.Logging;
+using System.Collections.Generic;
+using System.Linq;
+using System;
+using UnityEngine;
 
-public class CommandExample : ICommand
+public class ExampleCommand : ICommand
 {
     private readonly ManualLogSource _logger;
 
-    // Constructor where the logger is injected
-    public CommandExample(ManualLogSource logger)
+    public ExampleCommand(ManualLogSource logger)
     {
-    _logger = logger; // Inject the logger instance for logging purposes
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    // Command name used for triggering this command in the system
-    public string Name => "/ExampleCommand";
+    public string Name => "/setPollution";
 
-    // This method contains the logic that gets executed when the command is triggered
-    public void Execute()
+    public void Execute(params string[] args)
     {
-    _logger.LogInfo("Example command executed!");  // Log a message when executed
+        try
+        {
+            if (args.Length == 0)
+            {
+                _logger.LogError("No arguments provided. Usage: /setPollution <int>");
+                return;
+            }
+
+            if (!int.TryParse(args[0], out int pollutionLevel))
+            {
+                _logger.LogError("Invalid argument. Please provide a valid integer.");
+                return;
+            }
+
+            Game.current.pollution = pollutionLevel;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"An error occurred while executing the command: {ex.Message}");
+        }
     }
 }
+
 ```
 
 2. Build the Command DLL

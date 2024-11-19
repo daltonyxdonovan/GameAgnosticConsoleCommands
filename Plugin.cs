@@ -183,7 +183,7 @@ public class Plugin : BaseUnityPlugin
             try
             {
                 var commandToExecute = commands[commandName];
-                commandToExecute?.Invoke(args);
+                commandToExecute?.Invoke(args); // Pass the arguments here
                 Log($"Command '{commandName}' has been executed with arguments: {string.Join(", ", args)}");
             }
             catch (Exception ex)

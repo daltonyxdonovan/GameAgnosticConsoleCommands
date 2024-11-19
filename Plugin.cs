@@ -102,7 +102,6 @@ public class Plugin : BaseUnityPlugin
                 {
                     // Use a delegate compatible with Execute(params string[] args)
                     commands[command.Name] = args => command.Execute(args);
-                    Logger.LogInfo($"Registered command: {command.Name}");
                 }
             }
             catch (Exception ex)
